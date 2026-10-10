@@ -104,7 +104,7 @@ async def receive_webhook(request: Request):
                             try:
                                 client = get_gemini_client()
                                 response = client.models.generate_content(
-                                    model="gemini-3.1-flash-preview",
+                                    model="gemini-3.6-flash",
                                     contents=user_text
                                 )
                                 response_text = response.text
@@ -147,7 +147,7 @@ async def chat_webhook(request: Request):
         try:
             client = get_gemini_client()
             response = client.models.generate_content(
-                model="gemini-3.1-flash-preview",
+                model="gemini-3.6-flash",
                 contents=user_message_text
             )
             response_text = response.text
